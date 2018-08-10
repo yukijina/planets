@@ -62,12 +62,32 @@ for (var i = 0; i < planets.length; i++) {
   dropdown.value = planets[i].name
   dropdown.textContent = planets[i].name
 
+  $('#selectPlanet').append(dropdown)
+
+}
 
   $('#selectPlanet').change(function() {
+    var resultDiv = document.getElementById('resultDiv')
+    var nameH1 = document.getElementById('nameH1')
+    var distanceH4 = document.getElementById('distanceH4')
+    var lengthH4 = document.getElementById('lengthH4')
+    var description = document.getElementById('description')
+    var image = document.getElementsByClassName('image')[0]
 
-      console.log('success')
+
+    for (var i = 0; i < planets.length; i++) {
+      if(this.value == planets[i].name) {
+
+
+      nameH1.textContent = planets[i].name
+      distanceH4.textContent = planets[i].distanceFrSun
+      lengthH4.textContent = planets[i].lengthOfYear
+      description.textContent = planets[i].description
+      image.src = planets[i].image
+      image.alt = planets[i].name
+
+
+    }
+      }
 
   })
-
-  $('#selectPlanet').append(dropdown)
-}
