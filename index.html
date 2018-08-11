@@ -6,52 +6,60 @@
 		<!-- VIEWPORT -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- TITLE -->
-		<title></title>
+		<title>planets</title>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/earth.png">
+		<!-- GOOGLE FONT -->
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
+		<!-- AMIMATED CSS -->
+		<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 		<!-- FONTAWESOME -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 		<!-- BOOTSTRAP CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<!-- ORIGINAL CSS -->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
+
+		<!-- Header - title and select -->
 		<header>
 			<div class="container">
 				<div class="row">
-					<h2>Let's explorer our solar system</h2>
-					<select id="selectPlanet">
-
-					</select>
+					<h2 class="text-white mt-5 mb-3 animated bounceInLeft">EXPLORER PLANETS</h2>
 				</div>
-
-				<div id="resultDiv">
-					<h1 id="nameH1"></h1>
-					<h4 id="distanceH4"></h4>
-					<h4 id="lengthH4"></h4>
-					<p id="description"></p>
-					<img src="" alt="" class="image">
-
-				</div>
-
-				<!-- Modal -->
-				<!-- <div id="myModal" class="modal">
-					 Modal content
-					<div class="modal-content">
-						<span class="close">&times;</span>
-						<p>some text here</p>
-					</div>
-				</div> -->
-
 
 				<div class="row">
-					<img class="planet img-fluid mx-auto"src="img/earth.png" alt="planet">
+					<select id="selectPlanet" class="animated bounceInLeft">
+						<!-- other options are created in JS -->
+						<option value="select">Select</option>
+					</select>
 				</div>
-
-
-
-		 </div>
+			</div>
 		</header>
 
+		<!-- Planet image -->
+		<div class="row">
+			<div class="col planet-wrapper">
+			 <img class="planet img-fluid mx-auto" src="img/earth.png" alt="planet">
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div id="myModal" class="modal">
+			 <!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h1 id="nameH1"></h1>
+				<h4 id="distanceH4"></h4>
+				<h4 id="lengthH4"></h4>
+				<p id="description"></p>
+				<div class="img-wrapper">
+					<img src="" alt="" class="image img-fluid">
+				</div>
+			</div>
+		</div>
 
 
 

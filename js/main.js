@@ -57,37 +57,53 @@ var planets = [
   },
 ]
 
+//loop option element to select
 for (var i = 0; i < planets.length; i++) {
   var dropdown = document.createElement('option')
   dropdown.value = planets[i].name
   dropdown.textContent = planets[i].name
 
   $('#selectPlanet').append(dropdown)
-
 }
 
-  $('#selectPlanet').change(function() {
-    var resultDiv = document.getElementById('resultDiv')
+  //change when user select option element
+  //result displays in modal
+  $('#selectPlanet').change(function () {
+    //modal display time - also add animation
+    setTimeout(function(){
+     $('#myModal').css('display', 'block').addClass('animated fadeIn')
+   },300)
+    //get element for modal and store in a variable
+    var modalCon = document.getElementsByClassName('modal-content')[0]
     var nameH1 = document.getElementById('nameH1')
     var distanceH4 = document.getElementById('distanceH4')
     var lengthH4 = document.getElementById('lengthH4')
     var description = document.getElementById('description')
     var image = document.getElementsByClassName('image')[0]
 
-
+    //apply each planets content to the elements
     for (var i = 0; i < planets.length; i++) {
       if(this.value == planets[i].name) {
 
-
-      nameH1.textContent = planets[i].name
-      distanceH4.textContent = planets[i].distanceFrSun
-      lengthH4.textContent = planets[i].lengthOfYear
-      description.textContent = planets[i].description
-      image.src = planets[i].image
-      image.alt = planets[i].name
-
-
-    }
+        $(nameH1).text(planets[i].name).css({'color': 'rgb(246, 203, 50)', 'font-weight': '600'})
+        $(distanceH4).text("Distance from Sun:  " + planets[i].distanceFrSun)
+        $(lengthH4).text("Length of Year:  " + planets[i].lengthOfYear)
+        $(description).text(planets[i].description).css({
+            'font-size': '1.2rem',
+            'margin-top': '1rem'
+         })
+        image.src = planets[i].image
+        image.alt = planets[i].name
       }
 
-  })
+    } //the end of loop
+  }) // the end of onchange function
+
+
+//close modal
+$('.close').click(function(){
+  $('#myModal').css('display', 'none')
+  // display first value "select" when user closed the modal
+  $('#selectPlanet').val('select')
+
+})
