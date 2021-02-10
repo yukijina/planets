@@ -1,4 +1,4 @@
-var planets = [
+const planets = [
   {
     name: 'Marcury',
     distanceFrSun: '41,741.157 miles',
@@ -58,8 +58,8 @@ var planets = [
 ]
 
 //loop option element to select
-for (var i = 0; i < planets.length; i++) {
-  var dropdown = document.createElement('option')
+for (let i = 0; i < planets.length; i++) {
+  const dropdown = document.createElement('option')
   dropdown.value = planets[i].name
   dropdown.textContent = planets[i].name
 
@@ -74,15 +74,15 @@ for (var i = 0; i < planets.length; i++) {
      $('#myModal').css('display', 'block').addClass('animated fadeIn')
    },300)
     //get element for modal and store in a variable
-    var modalCon = document.getElementsByClassName('modal-content')[0]
-    var nameH1 = document.getElementById('nameH1')
-    var distanceH4 = document.getElementById('distanceH4')
-    var lengthH4 = document.getElementById('lengthH4')
-    var description = document.getElementById('description')
-    var image = document.getElementsByClassName('image')[0]
+    const modalCon = document.getElementsByClassName('modal-content')[0]
+    const nameH1 = document.getElementById('nameH1')
+    const distanceH4 = document.getElementById('distanceH4')
+    const lengthH4 = document.getElementById('lengthH4')
+    const description = document.getElementById('description')
+    const image = document.getElementsByClassName('image')[0]
 
     //apply each planets content to the elements
-    for (var i = 0; i < planets.length; i++) {
+    for (let i = 0; i < planets.length; i++) {
       if(this.value == planets[i].name) {
 
         $(nameH1).text(planets[i].name).css({'color': 'rgb(246, 203, 50)', 'font-weight': '600'})
